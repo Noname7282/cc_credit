@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-file_path = "CC GENERAL.csv"
+file_path = "CC General.csv"
 data = pd.read_csv(file_path)
 
 # Data Cleaning
@@ -41,8 +41,8 @@ st.write(data)
 
 # Display a pairplot to visualize clusters
 st.write("### Pair Plot")
-sns.pairplot(data, hue='Cluster')
-st.pyplot()
+fig_pairplot = sns.pairplot(data, hue='Cluster')
+st.pyplot(fig_pairplot)
 
 # Display cluster distribution
 st.write("### Cluster Distribution")
@@ -56,7 +56,7 @@ st.write(cluster_centroids)
 
 # Display histogram of Credit Limit
 st.write("### Distribution of Credit Limit")
-plt.figure(figsize=(15, 10))
-sns.histplot(data['CREDIT_LIMIT'], bins=50, kde=True)
+fig_histogram, ax = plt.subplots(figsize=(15, 10))
+sns.histplot(data['CREDIT_LIMIT'], bins=50, kde=True, ax=ax)
 plt.title('Distribution of Credit Limit')
-st.pyplot()
+st.pyplot(fig_histogram)
