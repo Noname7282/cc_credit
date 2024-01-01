@@ -4,9 +4,10 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # Load the dataset
-file_path = "C:/Users/Lenovo/Downloads/MACHINELEARNING(UAS)/CC GENERAL.csv"
+file_path = os.path.abspath("CC GENERAL.csv")
 data = pd.read_csv(file_path)
 
 # Data Cleaning
