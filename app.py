@@ -53,3 +53,10 @@ st.bar_chart(cluster_distribution)
 st.write("### Cluster Centroids")
 cluster_centroids = pd.DataFrame(scaler.inverse_transform(kmeans.cluster_centers_), columns=selected_features)
 st.write(cluster_centroids)
+
+# Display histogram of Credit Limit
+st.write("### Distribution of Credit Limit")
+plt.figure(figsize=(15, 10))
+sns.histplot(data['CREDIT_LIMIT'], bins=50, kde=True)
+plt.title('Distribution of Credit Limit')
+st.pyplot()
