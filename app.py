@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-file_path = "CC GENERAL.csv"
+file_path = "C:/Users/Lenovo/Downloads/MACHINELEARNING(UAS)/CC GENERAL.csv"
 data = pd.read_csv(file_path)
 
 # Data Cleaning
@@ -19,10 +19,6 @@ X = data[selected_features]
 # Standardize the data
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
-
-# K-Means clustering
-kmeans = KMeans(n_clusters=3, random_state=42)
-data['Cluster'] = kmeans.fit_predict(X_scaled)
 
 # Streamlit App
 st.title("Credit Card Clustering App")
@@ -41,8 +37,8 @@ st.write(data)
 
 # Display a pairplot to visualize clusters
 st.write("### Pair Plot")
-fig_pairplot = sns.pairplot(data, hue='Cluster')
-st.pyplot(fig_pairplot)
+pair_plot = sns.pairplot(data, hue='Cluster')
+st.pyplot(pair_plot)
 
 # Display cluster distribution
 st.write("### Cluster Distribution")
@@ -53,10 +49,3 @@ st.bar_chart(cluster_distribution)
 st.write("### Cluster Centroids")
 cluster_centroids = pd.DataFrame(scaler.inverse_transform(kmeans.cluster_centers_), columns=selected_features)
 st.write(cluster_centroids)
-
-# Display histogram of Credit Limit
-st.write("### Distribution of Credit Limit")
-fig_histogram, ax = plt.subplots(figsize=(15, 10))
-sns.histplot(data['CREDIT_LIMIT'], bins=50, kde=True, ax=ax)
-plt.title('Distribution of Credit Limit')
-st.pyplot(fig_histogram)
