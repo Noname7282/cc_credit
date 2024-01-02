@@ -37,8 +37,9 @@ st.write(data)
 
 # Display a pairplot to visualize clusters
 st.write("### Pair Plot")
-sns.pairplot(data, hue='Cluster')
-st.pyplot()
+fig, ax = plt.subplots()
+sns.pairplot(data, hue='Cluster', ax=ax)
+st.pyplot(fig)
 
 # Display cluster distribution
 st.write("### Cluster Distribution")
