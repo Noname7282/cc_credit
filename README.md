@@ -31,7 +31,7 @@ Dalam konteks ini, kita ingin memahami perilaku pengguna kartu kredit dan tren p
   ## Data Understanding
   Dataset ini berisi informasi tentang pengguna kartu kredit, termasuk berbagai atribut seperti limit kredit, saldo, pembelian, pembayaran minimum, dan sebagainya. Dengan memahami struktur dan isi dataset, kita dapat merancang analisis yang sesuai untuk mencapai tujuan proyek.
 
-  https://www.kaggle.com/code/halflingwizard/interpret-k-means-clusters-on-credit-card-dataset
+  https://www.kaggle.com/datasets/arjunbhasin2013/ccdata
 
   ### Variabel-variabel pada Europe bike store sales adalah sebagai berikut:
   1. CUST_ID (ID Pelanggan) = object
